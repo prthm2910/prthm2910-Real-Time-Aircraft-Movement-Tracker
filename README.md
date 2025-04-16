@@ -57,7 +57,7 @@ This section breaks down the real-time data pipeline, step-by-step, as shown in 
 
 5. **Lambda Trigger ETL Job (1) ⚡**: When data arrives in the S3 Raw Zone, it triggers a Lambda function. This Lambda function, in turn, calls a Glue ETL job to transform the raw data into a usable format.
 
-   👉[[Scripts/S3-Raw-Zone-Lambda-Trigger.py|Lambda ETL Trigger Script]]
+   👉[Lambda ETL Trigger Script](Scripts/S3-Raw-Zone-Lambda-Trigger.py)
 
 6.  **ETL High-Level Description** 🏗️
 
