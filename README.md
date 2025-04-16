@@ -19,6 +19,10 @@ Built a real-time ETL pipeline using AWS services to analyze global flight activ
 
 ---
 
+## 🗄️ Data Architecture 
+
+![Data Architecture](Diagrams/Data%20Architecture.png)
+
 ## 🧱 Architecture Overview
 
 ```mermaid
