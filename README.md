@@ -47,7 +47,7 @@ This section breaks down the real-time data pipeline, step-by-step, as shown in 
 
 1. **Data Ingestion via Glue Job 📦**: The pipeline kicks off with a Glue Job. This job extracts data from an initial source 📥, which could be a database, API, or any other data source. The data related to the calls from Aviation Stack API.
 
-   👉[[Scripts/Get-data-from-AviationStack.ipynb|Data Ingestion Script]]
+   👉[Data Ingestion Script](Scripts/Get-data-from-AviationStack.ipynb)
 
 2. **Kinesis Stream 🌊**: Extracted data then flows through Amazon Kinesis, enabling real-time data streaming. Kinesis helps handle high-velocity data!
 
@@ -63,7 +63,7 @@ This section breaks down the real-time data pipeline, step-by-step, as shown in 
 
     The ETL process in this pipeline involves several steps to transform raw data into a structured format suitable for analysis and reporting:
 
-	![[Diagrams/ad_etl.png|ETL Diagram]]
+	![ETL Diagram](Diagrams/ad_etl.png)
 
 - **Data Extraction 📥**: The initial Glue Job extracts data from Aviation Stack API and other sources. This involves collecting raw data from various systems.
 
@@ -74,16 +74,16 @@ This section breaks down the real-time data pipeline, step-by-step, as shown in 
 
 - **Data Loading 📤**: The transformed data is then loaded into Amazon Redshift, making it available for querying and reporting.
 
-  👉[[Scripts/ad_etl.ipynb|ETL Script]]
+  👉[ETL Script](Scripts/ad_etl.ipynb)
 
 
 7. **S3 Cleaned Zone ✨**: The transformed (cleaned) data is now stored in another S3 bucket, referred to as the "Cleaned Zone." The data is structured and ready for further analysis.
 
 8. **Lambda Trigger & ETL Job (2) 💡**: The presence of data in S3 Cleaned Zone triggers yet another Lambda function. This Lambda function then initiates a Glue job to load the cleaned data into Amazon Redshift.
 
-	👉[[Scripts/S3-Cleaned-Zone-Lambda-Trigger.py|Lambda Trigger Script]]
+	👉[Lambda Trigger Script](Scripts/S3-Cleaned-Zone-Lambda-Trigger.py)
 	
-	👉[[Scripts/Load-from-S3-to-Redshift.ipynb|Data Transfer from S3 to Redshift ETL Script]]
+	👉[Data Transfer from S3 to Redshift ETL Script](Scripts/Load-from-S3-to-Redshift.ipynb)
 
 9. **Redshift 📊**: The final transformed data resides in an Amazon Redshift data warehouse. This is where you can perform in-depth data analysis.
 
@@ -91,7 +91,7 @@ This section breaks down the real-time data pipeline, step-by-step, as shown in 
 
 *   **QuickSight 📉**: Amazon QuickSight connects to Redshift for creating insightful data visualizations and reports
 
-![[Diagrams/Dashboard.png|Dashboard Diagram]]
+![Dashboard Diagram](Diagrams/Dashboard.png)
 
 ### Monitoring 🚦
   
